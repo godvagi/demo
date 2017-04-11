@@ -1,0 +1,60 @@
+@charset "utf-8";
+/* CSS Document */
+
+body {
+	font-family: 'Tinos', serif;
+    background-image: url("bg_Basic.jpg");
+    background-attachment:fixed; 
+
+}
+h1{
+	 text-align: center;
+	 text-shadow: 0 0 3px #FF0000, 0 0 35px #00CC00;
+	 font-size:98px
+
+
+}
+div.form{
+	background-color: #FFF;
+	opacity: 0.75;
+    filter: alpha(opacity=75);
+	margin-right:25%;
+	margin-left: 25%; ;
+	padding-top: 5px;
+    padding-bottom: 50px;
+    padding-left: 20px;
+}
+div.info{
+	margin-top:-4%;
+	margin-right:20%;
+	margin-left: 28%; 
+}
+div.but{
+	margin-right:20%;
+	margin-left: 40%; 
+}
+div.showImg{
+	margin-right:20%;
+	margin-left: 26%; 
+}
+div.showText{
+ 	text-align: center;
+}
+div{
+	font-size:22px;
+}
+/* @font-face{
+	font-family: myFirstFont;
+	src:url(Facile%20Sans.ttf);
+}
+div {
+	font-family: myFirstFont;
+}*/
+
+
+
+
+
+
+
+
