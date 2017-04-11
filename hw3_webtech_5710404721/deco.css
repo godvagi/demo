@@ -1,0 +1,66 @@
+@charset "utf-8";
+/* CSS Document */
+body {
+    background-image: url("../../../../xampp/htdocs/back2.jpg");	
+}
+h1{
+	 text-align: center;
+	 text-shadow: 0 0 3px #FF0000, 0 0 15px #3333CC;
+	 font-size:92px
+}
+form.form{
+	background-color: #FFF;
+	opacity: 0.75;
+    filter: alpha(opacity=75);
+	margin-right:15%;
+	margin-left: 15%; 
+	padding-top: 30px;
+	
+    padding-bottom: 10x;
+    padding-left: 50px;
+	
+}
+div.LastName{
+	margin-top:-6.5%;	
+	margin-right:10%;
+	margin-left: 31%; 
+}
+div.Street{	
+	margin-top:-6.5%;	
+	margin-right:10%;
+	margin-left: 34%; 
+}
+div.Zipcode{	
+	margin-top:-6.5%;	
+	margin-right:10%;
+	margin-left: 29%; 
+}
+div.Phone{	
+	margin-top:-6.4%;	
+	margin-right:10%;
+	margin-left: 58%; 
+}
+div.City{	
+	margin-top:-6.5%;	
+	margin-right:10%;
+	margin-left: 61%; 
+}
+div.ZodiacYear{	
+	margin-top:-6.3%;	
+	margin-right:10%;
+	margin-left: 22%; 
+}
+div.Birthday{	
+	margin-top:-6.3%;	
+	margin-right:10%; 
+	margin-left: 42%; 
+}
+div.button{
+	margin-top: 3%;	
+	margin-right:10%;
+	margin-left: 42%;
+}
+span{
+	color: red;
+	
+}

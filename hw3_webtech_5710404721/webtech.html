@@ -1,0 +1,500 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link rel="stylesheet" media="screen" href="../../../../xampp/htdocs/deco.css">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+</head>
+<body onload="checkCookie()" >
+	<header role="banner">
+		<h1>MY PROFILE</h1>
+	</header>
+
+<form class="form" id="frm1" >
+  <div id="showForm" style="display: block;">
+  <!-- FirstName -->
+  <div class="FirstName" id="FirstName">
+  	<span class="firstname1" id="firstname1"></span><br>
+  	<b>First name</b> <input type="text" id="1" name="firstname" oninput="validate(this)">
+  </div><br>
+  
+    <!-- LastName -->
+  <div class="LastName" id="LastName">
+  	<span class="lastname2" id="lastname2"></span><br>
+ 	 <b>Last name</b> <input type="text" id="2" name="lastname" oninput="validate(this)">
+  </div><br>
+
+  <!-- HouseNumber -->
+  <div id="House Number">
+    <span id="housenumber3"></span><br>
+  	<b>House Number</b> <input type="text" id="3" name="housenumber" oninput="validate(this)"> 
+  </div><br>
+  
+  <!-- Street -->
+  <div class="Street" id="Street">
+  	<span id="street4"></span><br>
+  	<b>Street</b> <input type="text" id="4" name="street" oninput="validate(this)">
+  	
+  </div><br>
+  
+  <!-- City -->
+  <div class="City" id="City">
+     <span id="city5"></span><br>
+ 	<b>City</b> <input type="text" id="5" name="city" oninput="validate(this)">
+  </div><br>
+ 
+  <!-- Province -->
+  <div class="Province" id="Province">
+ 	 <span id="province6"></span><br>
+ 	<b>Province</b> <input type="text" id="6" name="province" oninput="validate(this)">
+  </div><br>
+  
+  <!-- Zipcode -->
+  <div 	class="Zipcode" id="Zipcode">
+  <span id="zipcode7"></span><br>
+ 	 <b>Zipcode</b> <input type="text" id="7" name="zipcode" oninput="validate(this)">
+  </div><br>
+  
+  <!-- Phone -->
+  <div class="Phone" id="Phone">
+  <span id="phone8"></span><br>
+  	 <b>Phone Number</b> <input type="text" id="8" name="phone"  oninput="validate(this)" value="+662">
+  </div><br>
+
+  <!-- CellPhone -->
+  <div class="CellPhone" id="CellPhone">
+  <span id="cellphone9"></span><br>
+   <b>Cell phone number</b> <input type="text" id="9" name="cellphone" oninput="validate(this)" value="+66" >
+  </div><br>
+  
+  <!-- Birthday -->
+  <div id="Birthday">
+ 	<span id="day15"></span><span id="month16"></span><span id="year17"></span><br>
+  	<b>Birthday</b> <input id="15"type="text" name="day" oninput="validate(this)">
+     <input id="16"type="text" name="month" oninput="validate(this)"> <input id="17"type="text" name="year" oninput="validate(this)">
+  </div><br>
+  
+  <!-- ID -->
+  <div id="ID">
+  <span id="id10"></span><br>
+  	<b>Citizenship number</b> <input type="text" id="10" name="id" oninput="validate(this)">
+  </div><br>
+  
+  <!-- ZodiacSign -->
+  <div id="ZodiacSign">
+  <span id="zodiacsign11"></span><br>
+  	<b>Zodiac Sign</b>  <select id="11" name="zodiacsign">
+    	<option>Capricorn</option>
+        <option>Aquarius</option>
+        <option>Pisces</option>
+        <option>Aries</option>
+        <option>Taurus</option>
+        <option>Gemini</option>
+        <option>Cancer</option>
+        <option>Leo</option>
+        <option>Virgo</option>
+        <option>Libra</option>
+        <option>Scorpio</option>
+        <option>Sagittarius</option> </select>
+  </div><br>
+  
+  <!-- ZodiacYear -->
+  <div class="ZodiacYear" id="ZodiacYear">
+  <span id="zodiacyear12"></span><br>
+  	<b>Zodiac Year</b> <select id="12" name="zodiacyear">
+       	<option>Rat</option>
+        <option>Ox</option>
+        <option>Tiger</option>
+        <option>Rabbit</option>
+        <option>Dragon</option>
+        <option>Snake</option>
+        <option>Horse</option>
+        <option>Goat</option>
+        <option>Monkey</option>
+        <option>Rooster</option>
+        <option>Dog</option>
+        <option>Pig</option> </select>
+  </div><br>
+  
+  <div class="Birthday" id="Birthday">
+  <span id="birthday14"></span><br>
+ 	 <b>Birth Day of Week</b> <select id="13" name="birthday">
+     <option>Sunday</option>
+     <option>Monday</option>
+     <option>Tuesday</option>
+     <option>Wednesday</option>
+     <option>Thursday</option>
+     <option>Friday</option>
+     <option>Saturday</option>
+     </select>
+  </div>
+  <br><br>
+  
+  </div>
+</form>
+<div class="showTable" id="showTable" style="display: none;">
+<style>
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+		margin-top:5;	
+	margin-right:10%;
+	margin-left: 41%;
+	
+}
+th, td {
+    padding: 5px;
+    text-align: left;
+	background-color: #FFFFCC;
+    opacity: 0.75;
+    filter: alpha(opacity=75);
+}
+
+</style>
+
+<table id="tab" style="width:600 px">
+  <tr>
+    <th>Firstname</th>
+    <td id="firstname"></td>
+  </tr>
+  <tr>
+    <th>Lastname</th>
+    <td id="lastname"></td>
+  </tr>
+    <tr>
+    <th>House Number</th>
+    <td id="housenumber"></td>
+  </tr>
+  <tr>
+    <th>Street</th>
+    <td id="street"></td>
+  </tr>
+   <tr>
+    <th>City</th>
+    <td id="city"></td>
+  </tr>
+  <tr>
+    <th>Province</th>
+    <td id="province"></td>
+  </tr>
+    <tr>
+    <th>Zipcode</th>
+    <td id="zipcode"></td>
+  </tr>
+    <tr>
+    <th>Phone Number</th>
+    <td id="phone"></td>
+  </tr >
+    <tr >
+    <th>Cell Phone Number</th>
+    <td id="cellphone"></td>
+  </tr>
+    <tr>
+    <th>Birthday</th>
+    <td id="day"></td>
+  </tr>
+  <tr>
+    <th>Citizenship Number</th>
+    <td id="id"></td>
+  </tr>
+  <tr>
+    <th>Zodiac Sign</th>
+    <td id="zodiacsign"></td>
+  </tr>
+  <tr>
+    <th>Zodiac Year</th>
+    <td id="zodiacyear"></td>
+  </tr>
+    <tr>
+    <th>Birth Day of Week</th>
+    <td id="birthday"></td>
+  </tr>
+</table>
+
+
+</div>
+<div class="button" id="button" style="display: block;">
+<button onclick="setCookie()">Save</button>
+<button onclick="deleteCookie()" >Cancel</button>
+<button onclick="show()">Submit</button>
+</div>
+<br><br>
+
+<script>
+var eng_letters = /^[A-Za-z]+$/;
+var thai_letters = /^[ก-์]+$/;
+var numbers = /^[0-9]+$/;
+var eng_numbers = /^[A-Za-z0-9]+$/;
+var thai_numbers = /^[ก-์0-9]+$/;
+var answer = document.forms["frm1"];
+var count = 0;
+
+function setAnswer(ask)
+{
+    var y = document.getElementById(ask);
+    y.innerHTML = getCookie(ask);
+}
+function show(){
+	/*count = 0;*/
+	var keep = "";
+	alert("Cookies are "+answer.elements[0].value+" and "+answer.elements[1].value);
+	document.getElementById('frm1').style.display = "none";
+	document.getElementById('showTable').style.display = "block";
+	document.getElementById('button').style.display = "none";
+	setCookie();
+	for (i = 0; i < answer.length ;i++) {
+		if (answer[i].getAttribute("name")==="day"||answer[i].getAttribute("name")==="month"){
+			keep += answer.elements[i].value+" ";
+		}
+		if (answer[i].getAttribute("name")==="year"){
+			keep += answer.elements[i].value;
+			document.getElementById("day").innerHTML = keep;
+		}
+		if(answer[i].getAttribute("name")!=="month"){
+			if(answer[i].getAttribute("name")!=="year"){
+				setAnswer(answer[i].getAttribute("name"));
+			}
+		}
+	}
+	
+
+}
+function setCookie(){
+	var cookie = "";
+	for (i = 0; i < answer.length ;i++) {
+		document.cookie =  answer[i].getAttribute("name")+ "=" + answer.elements[i].value + ";path=/";
+	}
+}
+
+function getCookie(cname) {
+    var name = cname + "=";
+    var ca = document.cookie.split(';');
+	var decodedCookie = decodeURIComponent(document.cookie);
+    for(var i = 0; i < ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0) == ' ') {
+            c = c.substring(1);
+        }
+        if (c.indexOf(name) == 0) {
+            return c.substring(name.length, c.length);
+        }
+    }
+    return "";
+}
+
+function checkCookie() {
+	for (i = 0; i < answer.length ;i++) {
+		var data = getCookie(answer[i].getAttribute("name"));
+		if (answer[i].getAttribute("name")==="zodiacsign"||answer[i].getAttribute("name")==="zodiacyear"||answer[i].getAttribute("name")==="phone"||answer[i].getAttribute("name")==="cellphone"||answer[i].getAttribute("name")==="birthday"){
+			document.getElementById(answer[i].getAttribute("id")).value = data;
+			if (data===""){
+				if (answer[i].getAttribute("name")==="zodiacsign"){
+					document.getElementById(answer[i].getAttribute("id")).value = "Capricorn";
+				}
+				if (answer[i].getAttribute("name")==="zodiacyear"){
+					document.getElementById(answer[i].getAttribute("id")).value = "Rat";
+				}
+				if (answer[i].getAttribute("name")==="phone"){
+					document.getElementById(i+1).value = "+662"
+				}
+				if (answer[i].getAttribute("name")==="cellphone"){
+					document.getElementById(i+1).value = "+66";
+				}
+				if (answer[i].getAttribute("name")==="birthday"){
+					document.getElementById(answer[i].getAttribute("id")).value = "Sunday";
+				}
+			}
+		}
+		else{
+		  answer[i].value = data;
+		  
+		}
+		
+	}
+}
+
+function deleteCookie(){
+	for (i = 0; i < answer.length ;i++) {
+		var data = getCookie(answer[i].getAttribute("name"));
+		if (answer[i].getAttribute("name")==="zodiacsign"){
+			document.getElementById(answer[i].getAttribute("id")).value = "Capricorn";
+			document.cookie = answer[i].getAttribute("name")+"=;path=/";
+		}
+		if (answer[i].getAttribute("name")==="zodiacyear"){
+			document.getElementById(answer[i].getAttribute("id")).value = "Rat";
+			document.cookie = answer[i].getAttribute("name")+"=;path=/";
+		}
+		if (answer[i].getAttribute("name")==="phone"){
+			document.getElementById(answer[i].getAttribute("id")).value = "+662";
+			document.cookie = answer[i].getAttribute("name")+"=;path=/";
+		}
+		if (answer[i].getAttribute("name")==="cellphone"){
+			document.getElementById(answer[i].getAttribute("id")).value = "+66";
+			document.cookie = answer[i].getAttribute("name")+"=;path=/";
+		}
+		if (answer[i].getAttribute("name")==="birthday"){
+			document.getElementById(answer[i].getAttribute("id")).value = "Sunday";
+			document.cookie = answer[i].getAttribute("name")+"=;path=/";
+		}
+		
+		document.cookie = answer[i].getAttribute("name")+"=;path=/";
+		
+		
+	}
+	window.location.reload();
+	
+}
+
+
+function validate(form) {
+	var name = document.getElementById(form.id).getAttribute("name");
+	/*Check null*/
+	if (document.getElementById(form.id).value===""){
+    	document.getElementById(name+form.id).innerHTML = "This field is required.";
+		document.getElementById(form.id).style.backgroundColor = "#FFB2B2";
+
+	}
+	else{
+		if (name==="firstname" || name==="lastname" || name==="city" || name==="province"){
+			 isLetterAll(form);
+		}
+		if (name==="zipcode"){
+			isNumberAll(form,5);
+		}
+		if (name==="id"){
+			isNumberAll(form,13);
+		}
+		if (name==="street"){
+			isLetterAndNumber(form);
+		}
+		if (name==="housenumber"){
+   			if(document.getElementById(form.id).value.match(/^[/-9]+$/)){
+		 		document.getElementById(name+form.id).innerHTML = "";
+     	 		document.getElementById(form.id).style.backgroundColor = "#B2D8B2";	 
+			 }
+			else{
+				document.getElementById(name+form.id).innerHTML ="This field is required.";
+		 		document.getElementById(form.id).style.backgroundColor = "#FFB2B2";
+			 }
+		}
+		if (name==="phone"){
+			isPhone(form,12);
+		}
+		if (name==="cellphone"){
+			isPhone(form,13);
+		}
+		if (name==="day"){
+			if(document.getElementById(form.id).value.match(numbers)){
+			  if(document.getElementById(form.id).value>0&&document.getElementById(form.id).value<32){			   	document.getElementById(name+form.id).innerHTML = "";
+     	 			document.getElementById(form.id).style.backgroundColor = "#B2D8B2";
+				  
+			 }				  
+				 else{
+					document.getElementById(name+form.id).innerHTML ="Between 1-31.";
+		 			document.getElementById(form.id).style.backgroundColor = "#FFB2B2";
+				 }
+			}
+			else{
+				document.getElementById(name+form.id).innerHTML ="Only contain 0-9.More than";
+		 		document.getElementById(form.id).style.backgroundColor = "#FFB2B2";
+			 }	
+		}
+		if (name==="month"){
+			if(document.getElementById(form.id).value.match(numbers)){
+			  if(document.getElementById(form.id).value>0&&document.getElementById(form.id).value<13){
+				
+				 document.getElementById(name+form.id).innerHTML = "";
+     	 		document.getElementById(form.id).style.backgroundColor = "#B2D8B2";	 
+				 }
+				 else{
+				document.getElementById(name+form.id).innerHTML ="Between 1-12.";
+		 		document.getElementById(form.id).style.backgroundColor = "#FFB2B2";
+				 }
+				 
+			 }
+			else{
+				document.getElementById(name+form.id).innerHTML ="Only contain 0-9.";
+		 		document.getElementById(form.id).style.backgroundColor = "#FFB2B2";
+			 }
+		}
+		if (name==="year"){
+		     var name = document.getElementById(form.id).getAttribute("name");
+			 if(document.getElementById(form.id).value.match(numbers)){
+				 document.getElementById(name+form.id).innerHTML = "";
+     	 		document.getElementById(form.id).style.backgroundColor = "#B2D8B2";	 
+			 }
+			else{
+				document.getElementById(name+form.id).innerHTML ="Only contain 0-9.";
+		 		document.getElementById(form.id).style.backgroundColor = "#FFB2B2";
+			 }
+		}
+	}
+}
+
+/*Check LetterAll*/
+function isLetterAll(form){
+	 var name = document.getElementById(form.id).getAttribute("name");
+     if(document.getElementById(form.id).value.match(eng_letters)||document.getElementById(form.id).value.match(thai_letters)){
+		 document.getElementById(name+form.id).innerHTML = "";
+     	 document.getElementById(form.id).style.backgroundColor = "#B2D8B2";
+	 }
+	 else{
+		 document.getElementById(name+form.id).innerHTML = "Only contain A-Z,a-z and ก-ฮ.";
+		 document.getElementById(form.id).style.backgroundColor = "#FFB2B2";
+	 }
+}
+/*Check NumberAll*/
+function isNumberAll(form,len){
+	 var name = document.getElementById(form.id).getAttribute("name");
+	 if(document.getElementById(form.id).value.match(numbers)){
+	 	if(document.getElementById(form.id).value.length===len){
+		 document.getElementById(name+form.id).innerHTML = "";
+     	 document.getElementById(form.id).style.backgroundColor = "#B2D8B2";	
+		}
+	 	else{
+		 document.getElementById(name+form.id).innerHTML = "Only contain 0-9.Please enter "+len+" digits.";
+		 document.getElementById(form.id).style.backgroundColor = "#FFB2B2";
+		 }
+	 }
+	 else{
+		 document.getElementById(name+form.id).innerHTML = "Only contain 0-9.Please enter "+len+" digits.";
+		 document.getElementById(form.id).style.backgroundColor = "#FFB2B2";
+		 }
+	 }
+	
+	
+function isLetterAndNumber(form){
+	 var name = document.getElementById(form.id).getAttribute("name");
+	 if(document.getElementById(form.id).value.match(eng_numbers)||document.getElementById(form.id).value.match(thai_numbers)){
+		 document.getElementById(name+form.id).innerHTML = "";
+     	 document.getElementById(form.id).style.backgroundColor = "#B2D8B2";	
+	 }
+	 else{
+		 document.getElementById(name+form.id).innerHTML = "Only contain A-z,a-z,ก-ฮ and 0-9.";
+		 document.getElementById(form.id).style.backgroundColor = "#FFB2B2";
+	 }
+}
+function isPhone(form,len){
+	
+	 var name = document.getElementById(form.id).getAttribute("name");
+	 if(document.getElementById(form.id).value.match(/^[+-+0-9]+$/)){
+	 	if(document.getElementById(form.id).value.length===len){
+		 document.getElementById(name+form.id).innerHTML = "";
+     	 document.getElementById(form.id).style.backgroundColor = "#B2D8B2";	
+		}
+	 	else{
+		 document.getElementById(name+form.id).innerHTML = "Only contain 0-9.Please enter "+len+" digits.";
+		 document.getElementById(form.id).style.backgroundColor = "#FFB2B2";
+		 }
+	 }
+	 else{
+		 document.getElementById(name+form.id).innerHTML = "Only contain 0-9.Please enter "+len+" digits.";
+		 document.getElementById(form.id).style.backgroundColor = "#FFB2B2";
+		 }
+	 }
+
+
+
+</script>
+</body>
+</html>
