@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+  <link rel="stylesheet" media="screen" href="decorate.css">
+ <link href="https://fonts.googleapis.com/css?family=Black+Ops+One|Neuton|Pangolin|Sansita|Tinos" rel="stylesheet">
+
+	<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+<script>
+$(document).ready(function(){
+  $("#cancel").click(function(){
+    $("#firstname").val("");
+    $("#lastname").val("");
+    $("#birthday").val("");
+    });
+});
+// Control CSS Submit button
+$(document).ready(function(){
+	$("#submit").click(function(){
+		var val =$("#birthday").val().split("-");
+		var d = new Date();
+   if($("#test2").val()==="false"){
+    if ((d.getFullYear())-Number(val[0])<13){
+      $("#test2").text($("#gender").val());
+      $("body").css("background-image", "url(bg_Baby.jpg)").css("font-family","'Pangolin', cursive");
+      
+ 
+      alert("Hi "+$("#firstname").val()+$("#lastname").val()+".");
+    }
+    else if ((d.getFullYear())-Number(val[0])===13&&(d.getMonth()+1)>Number(val[1])){
+      $("#test2").text($("#gender").val());
+$("body").css("background-image", "url(bg_Baby.jpg)").css("font-family","'Pangolin', cursive");
+      alert("Hi "+$("#firstname").val()+"  "+$("#lastname").val()+".");
+       
+    }
+    else if ((d.getFullYear())-Number(val[0])===13&&(d.getMonth()+1)===Number(val[1])&&(d.getDate())>Number(val[2])){
+      $("#test2").text($("#gender").val());
+    $("body").css("background-image", "url(bg_Baby.jpg)").css("font-family","'Pangolin', cursive");
+      alert("Hi "+$("#firstname").val()+$("#lastname").val()+".");
+
+    }
+    else if ($("#male").prop("checked")===true){
+      $("body").css("background-image", "url(bg_Male.jpg)").css("font-family","'Black Ops One', cursive");
+
+    }
+    else if ($("#female").prop("checked")===true){
+       $("body").css("background-image", "url(bg_Female.jpg)").css("font-family","'Sansita', sans-serif");
+    }
+  }
+$("#test2").val("true");
+	});
+  
+});
+</script>
+</head> 
+
+<body onload="setProvince()">
+<!-- Form -->
+<br><br><br>
+<div class="form">
+
+<p id = "test2" value="true"></p>
+<h1>Thailand</h1>
+<div class="info">
+<form id="form" name="form">
+	<b>Firstname</b> <input id="firstname" type="text" name="firstname"><br><br>
+	<b>Lastname</b> <input id="lastname"type="text" name="lastname"><br><br>
+	<b>Birthday</b> <input type="date" id=birthday name="birthday"><br><br>
+	<b>Gender</b> &nbsp; &nbsp; <input id="male" type="radio" name="gender" value="male"><b>Male</b>
+	       &nbsp; &nbsp; <input id="female" type="radio" name="gender" value="female"><b>Female</b><br><br>
+	<b>Province</b> <select id="province" name="province"></select>
+</form><br>
+</div>
+<div class="but">
+<button id=submit onclick="loadDoc()">Submit</button>
+<button id=cancel>Cancel</button>
+</div><br>
+<div class="showImg">
+<p id="showImage"></p>
+</div>
+<div class="showText">
+<p id="showText"></p>
+</div>
+
+
+</div>
+<br><br>
+
+<script>
+// Load slogan and sign
+function loadDoc() {
+    var val =$("#birthday").val().split("-");
+    var d = new Date();
+    if (Number(val[0])===0||Number(val[1])===0||Number(val[2])===0){
+       alert("Please fill your birthday.")
+    }
+    else if(d.getFullYear()<Number(val[0])){
+      alert("Your Birthday is incorrect.")
+    }
+    else if ((d.getFullYear())===Number(val[0]) && (d.getMonth()+1)<Number(val[1]) ){
+      alert("Your Birthday is incorrect.")
+    }
+    else if ((d.getFullYear())===Number(val[0]) && (d.getMonth()+1)===Number(val[1]) && (d.getDate())<Number(val[2])){
+      alert("Your Birthday is incorrect.")
+    }
+
+    else{
+       if ($("#firstname").val()===""|| $("#lastname").val()===""){
+          alert("Please fill your name.")
+       
+        } 
+        else if((!$("#firstname").val().match(/^[A-Za-zก-์]+$/))||(!$("#lastname").val().match(/^[A-Za-zก-์]+$/))){ 
+          alert("Please your name is incorrect.")
+        }
+       else if (($("#firstname").val().match(/^[A-Za-zก-์]+$/))||($("#lastname").val().match(/^[A-Za-zก-์]+$/))){
+          
+            if ($("#male").prop("checked")===false&&$("#female").prop("checked")===false){
+               alert("Plaese select your gender.");
+            }  
+            else{
+              $("#test2").val("false")
+              var province = $("#province").val();
+              var xhttp = new XMLHttpRequest();
+              var img = '<img src = "sign/'+province+'.png">';
+              xhttp.onreadystatechange = function() {
+              if (this.readyState == 4 && this.status == 200) {
+                document.getElementById("showText").innerHTML = this.responseText;
+                document.getElementById("showImage").innerHTML = img;
+                }
+              };
+              xhttp.open("GET",'slogan/'+province+'.txt',true);
+              xhttp.send(); 
+            }
+          }
+    }
+}
+// Set Combobox Province
+function setProvince() {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+
+    if (this.readyState == 4 && this.status == 200) {
+    	var all = this.responseText.split(".txt")
+    	for (var i = all.length - 2; i >= 0; i--) {
+    		$('#province').append($("<option></option>").attr("value",all[i]).text(all[i]));
+    	}
+    }
+  };
+  xhttp.open("GET",'allProvince.txt',true);
+  xhttp.send(); 
+}
+
+</script>
+</body>
+</html>
